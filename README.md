@@ -1,2 +1,15 @@
 # react-step-progress-component
-Simple React component that implement Step Progress Component
+Simple React component that implements Step Progress Component
+
+
+TODO:
+1. setup env
+2. display empty component
+3. fill component by:
+       props
+           steps count
+       state
+           current step
+       methods
+           nextstep
+           prevstep
