@@ -104,10 +104,9 @@ exports.default = function (_ref) {
     _react2.default.createElement(
       'div',
       null,
-      steps.map(function (_ref2, idx) {
-        var label = _ref2.label;
+      steps.map(function (label, idx) {
         return idx === step ? '[' + label + ']' : label;
-      })
+      }).join('/')
     )
   );
 };

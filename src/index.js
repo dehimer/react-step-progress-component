@@ -5,9 +5,9 @@ export default ({ step, steps }) => (
     <div>Step Progress</div>
     <div>
       {
-        steps.map(({label}, idx) => (
+        steps.map((label, idx) => (
           idx === step ? `[${label}]` : label
-        ))
+        )).join('/')
       }
     </div>
   </div>
