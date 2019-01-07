@@ -90,11 +90,25 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = function () {
+exports.default = function (_ref) {
+  var step = _ref.step,
+      steps = _ref.steps;
   return _react2.default.createElement(
     'div',
     null,
-    'Step Progress'
+    _react2.default.createElement(
+      'div',
+      null,
+      'Step Progress'
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      steps.map(function (_ref2, idx) {
+        var label = _ref2.label;
+        return idx === step ? '[' + label + ']' : label;
+      })
+    )
   );
 };
 
