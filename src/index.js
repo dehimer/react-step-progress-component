@@ -1,15 +1,20 @@
 import React from 'react'
+import Line from './components/Line'
+import Circle from './components/Circle'
+import Label from './components/Label'
 
-export default ({ step, steps, nextStep, prevStep }) => (
-  <div>
-    <div>Step Progress</div>
-    <div>
+import styles from './index.css'
+
+export default ({ step, steps, nextStep, prevStep, color, inactiveColor }) => {
+  return (
+    <div className={styles.wrapper}>
       {
         steps.map((label, idx) => {
-          const isActiveStep = (idx === step);
-
+          const isLastStep = idx === steps.length - 1;
           const isNextStep = (step - idx === -1);
           const isPrevStep = (step - idx === 1);
+          console.log(`isNextStep: ${isNextStep}`);
+          console.log(`isPrevStep: ${isPrevStep}`);
 
           let handler = () => {};
 
@@ -17,12 +22,14 @@ export default ({ step, steps, nextStep, prevStep }) => (
           if (isPrevStep) handler = prevStep;
 
           return (
-            <div onClick={handler}>
-              { isActiveStep ? `[${label}]` : label }
+            <div key={idx} className={isLastStep ? styles.laststep : styles.step}>
+              <Label label={label} color={idx <= step ? color : inactiveColor} />
+              <Circle handler={handler} color={idx <= step ? color : inactiveColor}/>
+              <Line isLastStep={isLastStep} color={idx < step ? color : inactiveColor}/>
             </div>
           )
-        }).join(' - ')
+        })
       }
     </div>
-  </div>
-);
+  );
+}

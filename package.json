@@ -1,6 +1,6 @@
 {
   "name": "react-step-progress-component",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Simple React component that implements Step Progress Component",
   "author": "Denis Novikov",
   "license": "ISC",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "react": "^15.5.4",
-    "webpack": "^2.6.1"
+    "webpack": "^4.5.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -19,11 +19,17 @@
     "build": "webpack"
   },
   "devDependencies": {
+    "autoprefixer": "^9.4.4",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "^1.5.1"
+    "babel-preset-env": "^1.5.1",
+    "css-loader": "^2.1.0",
+    "postcss-flexbugs-fixes": "^4.1.0",
+    "postcss-loader": "^3.0.0",
+    "style-loader": "^0.23.0",
+    "webpack-cli": "^3.2.1"
   }
 }
